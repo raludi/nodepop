@@ -1,0 +1,19 @@
+{
+    
+    "ads":   [           
+        {                                                                         
+            "name":   "Bicicleta",
+            "sale":   true,
+            "price":   230.15,
+            "photo":   "images/anuncios/bici.jpg",
+            "tags":   [   "lifestyle",   "motor"]
+        },
+        {                           
+            "name":   "iPhone",
+            "sale":   true,
+            "price":   2.15,
+            "photo":   "images/anuncios/iphone.jpg",
+            "tags":   [   "lifestyle",   "mobile"]
+        }    
+    ]    
+}
