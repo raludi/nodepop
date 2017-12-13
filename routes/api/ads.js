@@ -5,6 +5,9 @@ const router = express.Router();
 
 const Ad = require('../../models/Ad');
 
+const jwtAuth = require('../../lib/jwtAuth');
+router.use(jwtAuth());
+
 router.get('/tags/', async (req, res, next) => {
     try {
         const rows = await Ad.getTags();

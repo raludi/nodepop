@@ -14,8 +14,10 @@ const userSchema = mongoose.Schema({
 /** 
  * Validate User
 */
-userSchema.statics.validateUser = function(user) {
-    const query = User.find({email: user.email, password: user.password});
+userSchema.statics.validateUser = function(filter) {
+    const query = User.find();
+    query.where('email').equals(filter.email)
+        .where('password').equals(filter.password);
     return query.exec();
 };
 
