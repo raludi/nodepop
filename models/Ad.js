@@ -54,12 +54,6 @@ adSchema.statics.getListPaged = function(filters, limit, skip, sort) {
     return query.exec()
 };
 
-
-adSchema.statics.getPhoto = function(filter) {
-    const query = Ad.find({photo: filter});
-    return query.exec();
-};
-
 /**
  * Obtain all tags
  */

@@ -2,18 +2,39 @@
     
     "ads":   [           
         {                                                                         
-            "name":   "Bicicleta",
+            "name":   "Bicycle",
             "sale":   true,
-            "price":   230.15,
-            "photo":   "images/anuncios/bici.jpg",
+            "price":   104.15,
+            "photo":   "images/ads/bike.jpg",
             "tags":   [   "lifestyle",   "motor"]
         },
         {                           
             "name":   "iPhone",
             "sale":   true,
+            "price":   580.99,
+            "photo":   "images/ads/iphone.jpg",
+            "tags":   [   "iOS",   "mobile"]
+        },
+        {                           
+            "name":   "Display",
+            "sale":   true,
+            "price":   150.34,
+            "photo":   "images/ads/display.jpg",
+            "tags":   [   "ips",   "screen"]
+        },
+        {                           
+            "name":   "Figure",
+            "sale":   true,
+            "price":   54.99,
+            "photo":   "images/ads/figure.jpg",
+            "tags":   [   "star",   "vader"]
+        },
+        {                           
+            "name":   "Macbook",
+            "sale":   true,
             "price":   2.15,
-            "photo":   "images/anuncios/iphone.jpg",
-            "tags":   [   "lifestyle",   "mobile"]
+            "photo":   "images/ads/mac.jpg",
+            "tags":   [   "programming",   "apple"]
         }    
     ]    
 }

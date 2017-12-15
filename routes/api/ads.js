@@ -6,13 +6,14 @@ const router = express.Router();
 const Ad = require('../../models/Ad');
 
 const jwtAuth = require('../../lib/jwtAuth');
-router.use(jwtAuth());
+
+//router.use(jwtAuth());
 
 router.get('/tags/', async (req, res, next) => {
     try {
         const rows = await Ad.getTags();
         if (rows.length <= 0) {
-            res.json({ succcess: true, result: 'Nada'});
+            res.json({ succcess: true, result: 'No tags found'});
         }
         res.json({ succcess: true, result: rows});
     } catch(err) {
@@ -44,18 +45,6 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-/**
- *  Get para devolver la imagen
- */
-router.get('/:id', async (req, res, next) => {
-    try {
-        const photo = await req.params.id;
-        const row = Ad.getPhoto(photo);
-        res.send(row);
-    } catch(err) {
-        next(err);
-    }
-    
-});
+
 
 module.exports = router;

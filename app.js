@@ -21,6 +21,13 @@ app.use(cookieParser());
 //si no usamos estaticos los ponemos despues de las rutas
 app.use(express.static(path.join(__dirname, 'public')));//sirve ficheros estaticos de la ruta public
 
+//Ficheros estáticos
+app.use('/ads/bike.png', express.static (__dirname + '/public/images/ads/bike.jpg'));
+app.use('/ads/iphone.png', express.static (__dirname + '/public/images/ads/iphone.jpg'));
+app.use('/ads/figure.png', express.static (__dirname + '/public/images/ads/figure.jpg'));
+app.use('/ads/display.png', express.static (__dirname + '/public/images/ads/display.jpg'));
+app.use('/ads/mac.png', express.static (__dirname + '/public/images/ads/mac.jpg'));
+
 //Cargamos nuestras rutas
 app.use('/users', require('./routes/api/users'));
 app.use('/ads', require('./routes/api/ads'));
