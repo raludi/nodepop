@@ -1,18 +1,23 @@
+
+
 'use strict'
 
 const express = require('express');
 const router = express.Router();
 const Ad = require('../../models/Ad');
-
 const jwtAuth = require('../../lib/jwtAuth');
+const customError = require('../../utils/customError');
+
 
 //router.use(jwtAuth());
 
 router.get('/tags/', async (req, res, next) => {
     try {
+        const lang = req.get('Accept-Language');
         const rows = await Ad.getTags();
         if (rows.length <= 0) {
-            res.json({ succcess: true, result: 'No tags found'});
+            next(new customError('ELEMENT_NOT_FOUND', 402, lang));
+            return;
         }
         res.json({ succcess: true, result: rows});
     } catch(err) {
@@ -27,6 +32,7 @@ router.get('/tags/', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     
     try {
+        const lang = req.get('Accept-Language')
         var filters = {};
         filters.name = (typeof req.query.name !== undefined ? req.query.name : null);
         filters.sale = (typeof req.query.sale !== undefined ? req.query.sale : null);
@@ -37,7 +43,8 @@ router.get('/', async (req, res, next) => {
         const sort = (typeof req.query.sort !== undefined ? req.query.sort : null);
         const rows = await Ad.getListPaged(filters, limit, skip, sort);
         if (rows.length <= 0) {
-            res.json({ success: true, result: 'No results in database'});
+            next(new customError('ELEMENT_NOT_FOUND',402, lang));
+            return;
         }
         res.json({ success: true, result: rows });
     } catch(err) {

@@ -1,0 +1,9 @@
+{
+	"ELEMENT_NOT_FOUND": "Elemento no encontrado en base datos",
+	"ELEMENT_ADDED": "Elemento añadido correctamente a la base de datos",
+	"AUTH_FAIL": "Fallo de autenticación",
+	"NO_TOKEN": "No se ha proporcionado ningún token",
+	"INVALID_TOKEN": "Token inválido",
+	"USER_NOT_FOUND": "Usuario no encontrado",
+	"pepe": "pepe"
+}

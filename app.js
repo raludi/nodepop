@@ -7,8 +7,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').config();
 var app = express();
+var i18n = require('i18n')
 
 require('./lib/connectMongo');
+
+i18n.configure({
+    locales:['en', 'es'],
+    directory: __dirname + '/locales'
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -18,6 +25,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(i18n.init);
 //si no usamos estaticos los ponemos despues de las rutas
 app.use(express.static(path.join(__dirname, 'public')));//sirve ficheros estaticos de la ruta public
 
@@ -29,6 +37,7 @@ app.use('/ads/display.png', express.static (__dirname + '/public/images/ads/disp
 app.use('/ads/mac.png', express.static (__dirname + '/public/images/ads/mac.jpg'));
 
 //Cargamos nuestras rutas
+app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/apiV1/users'));
 app.use('/ads', require('./routes/apiV1/ads'));
 
@@ -42,20 +51,18 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-
-  if (err.array) {//erro de express validator
-    err.status = 422;
-    const errInfo = err.array({onlyFirstError: true})[0];
+  if(err.status === 422) {
+    return res.json({ success: false, error: err.message, status: err.status });
   }
-
   res.status(err.status || 500);
-
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // Error para una página web
-  res.json({ message: err.message , status: err.status });
+  return res.json({success: false,
+      error: i18n.__({phrase:err.message , locale: (err.language !== undefined ? err.language : 'es')}),
+       status: err.status});
 });
 
 
