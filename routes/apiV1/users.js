@@ -5,8 +5,17 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const SHA256 = require('crypto-js/sha256');
 const User = require('../../models/User');
+const { body, validationResult } = require('express-validator/check');
 
-router.post('/register', (req, res, next) => { 
+router.post('/register', [
+    body('email').isEmail().withMessage('Must be an email'),
+    body('password').isLength({ min: 6 }).withMessage('passwords must be at least 6 chars length')   
+    ],
+    (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.mapped() });
+    }
     const pass = SHA256(req.body.password);
     const registration = new User({ name: req.body.name, email: req.body.email, password: pass});
     User.registerUser(registration);

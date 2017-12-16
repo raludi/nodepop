@@ -29,7 +29,6 @@ adSchema.statics.getListPaged = function(filters, limit, skip, sort) {
     }
     if (filters.price != null) {//Filtro precio
         let cad = filters.price.split("-",2);
-        console.log(cad);
         if (cad.length > 1) {
             if (cad[0] && cad[1]) {
                 query.where('price').gt(parseInt(cad[0])).lt(parseInt(cad[1]));

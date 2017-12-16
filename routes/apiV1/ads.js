@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-
 const Ad = require('../../models/Ad');
 
 const jwtAuth = require('../../lib/jwtAuth');
@@ -26,6 +25,7 @@ router.get('/tags/', async (req, res, next) => {
  * GET lista paginada de anuncios
  */
 router.get('/', async (req, res, next) => {
+    
     try {
         var filters = {};
         filters.name = (typeof req.query.name !== undefined ? req.query.name : null);
