@@ -5,7 +5,6 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const SHA256 = require('crypto-js/sha256');
 const User = require('../../models/User');
-const translate = require('../../utils/translate');
 const customError = require('../../utils/customError');
 const { body, validationResult } = require('express-validator/check');
 
@@ -18,12 +17,16 @@ router.post('/register', [
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         console.log(errors.mapped);
-        return next(new customError(errors.mapped(), 422, lang));
+        return next(new customError(errors.mapped(), 422));
     }
     const pass = SHA256(req.body.password);
+    if(!req.body.name || !req.body.email || !req.body.password) {
+        console.log(res.__('FILL_FIELDS'));
+        return next(new customError('FILL_FIELDS', 401))
+    }
     const registration = new User({ name: req.body.name, email: req.body.email, password: pass});
     User.registerUser(registration);
-    res.json({ success: true, result: translate('ADDED', lang)});
+    res.json({ success: true, result: res.__('ELEMENT_ADDED')});
 });
 
 router.post('/authenticate', async (req, res, next) => {
@@ -34,7 +37,7 @@ router.post('/authenticate', async (req, res, next) => {
         filter.password = SHA256(req.body.password);    
         const row = await User.validateUser(filter);
         if (row.length <= 0) {
-            next(new customError('USER_NOT_FOUND', 404, lang));
+            next(new customError('USER_NOT_FOUND', 404));
             return; 
         }  AUTH_FAIL
         const userId = { _id: row._id};
@@ -42,7 +45,7 @@ router.post('/authenticate', async (req, res, next) => {
             expiresIn: process.env.JWT_EXPIRES_IN
         }, (err, token) => {
             if (err) {
-                next(new customError('AUTH_FAIL', 404, lang));
+                next(new customError('AUTH_FAIL', 404));
                 return; 
             }
             res.json({ sucess: true, token: token });

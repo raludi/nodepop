@@ -1,8 +1,10 @@
 {
-    "ELEMENT_NOT_FOUND": "Elements not found in database",
-    "ELEMENT_ADDED": "Element added correctly to database",
-    "AUTH_FAIL": "Failed Authentication",
-    "NO_TOKEN": "No token provided",
-    "INVALID_TOKEN": "Token invalid",
-    "USER_NOT_FOUND": "User not found"
+	"ELEMENT_NOT_FOUND": "Elements not found in database",
+	"ELEMENT_ADDED": "Element added correctly to database",
+	"AUTH_FAIL": "Failed Authentication",
+	"NO_TOKEN": "No token provided",
+	"INVALID_TOKEN": "Token invalid",
+	"USER_NOT_FOUND": "User not found",
+	"FILL_FIELDS": "Fields no completed",
+	"ADDED": "ADDED"
 }

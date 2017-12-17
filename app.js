@@ -58,11 +58,11 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+console.log(res.__(err.message));
   // Error para una página web
-  return res.json({success: false,
-      error: i18n.__({phrase:err.message , locale: (err.language !== undefined ? err.language : 'es')}),
-       status: err.status});
+  return res.json({success: false, 
+      error: res.__(err.message),  
+      status: err.status});
 });
 
 
