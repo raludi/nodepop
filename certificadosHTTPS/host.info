@@ -1,0 +1,61 @@
+SHA1 Fingerprint=06:67:A5:74:60:D9:0E:26:12:17:DF:4C:93:C8:B9:58:20:2B:49:3B
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            a1:e5:8d:81:69:53:01:9c
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=ES, ST=Nodeland, L=Nodeloc, O=Babel, OU=Node, CN=Nombre del certificado/emailAddress=asdsa@example.com
+        Validity
+            Not Before: May 30 17:00:06 2016 GMT
+            Not After : May 28 17:00:06 2026 GMT
+        Subject: C=ES, ST=Nodeland, L=Nodeloc, O=Babel, OU=Node, CN=Nombre del certificado/emailAddress=asdsa@example.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:bd:cc:6d:a2:ea:12:33:78:d0:bd:54:19:48:64:
+                    f2:63:d1:80:e6:a6:d4:00:df:8e:5c:98:0c:d8:aa:
+                    7f:ad:a3:e4:d6:1a:b9:91:76:75:1f:0a:34:37:f3:
+                    61:f2:13:26:48:bd:21:72:a0:9f:90:be:da:fe:c8:
+                    6e:a2:e0:27:5a:a2:8a:3f:83:bf:be:62:fd:6f:ae:
+                    50:15:ad:57:c3:25:a3:00:9c:1e:88:ec:b0:9c:8d:
+                    e0:4e:af:4e:27:ca:80:62:7d:02:e4:42:8d:b4:26:
+                    db:4f:f2:16:af:66:99:2c:e6:de:e7:e6:b1:bc:6c:
+                    b0:46:37:55:53:03:8c:ca:0d:a7:3b:7a:20:50:41:
+                    ab:27:de:cd:af:76:f9:73:02:f7:e0:1e:0e:ae:c4:
+                    95:4a:d4:64:e4:4c:d5:d2:16:92:62:1d:90:17:e9:
+                    a4:a0:f7:e8:cc:e5:5a:2c:c9:77:2f:2d:18:17:5f:
+                    9a:a8:74:9a:4a:ca:bd:5b:5d:52:f0:5b:19:2b:94:
+                    8f:ea:23:63:d3:33:22:0b:a0:64:87:15:e8:bd:1d:
+                    9a:11:35:27:11:67:98:81:5d:74:25:68:48:e4:e2:
+                    af:e5:58:cc:d1:69:5e:85:ae:17:5e:d0:f7:18:54:
+                    0c:1f:9e:05:a1:c4:d9:59:6a:23:a7:f5:40:d1:f5:
+                    eb:03
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                BD:CE:FE:A3:49:99:2C:92:E2:D2:92:E0:4A:D3:D2:55:8B:53:3D:4B
+            X509v3 Authority Key Identifier: 
+                keyid:BD:CE:FE:A3:49:99:2C:92:E2:D2:92:E0:4A:D3:D2:55:8B:53:3D:4B
+                DirName:/C=ES/ST=Nodeland/L=Nodeloc/O=Babel/OU=Node/CN=Nombre del certificado/emailAddress=asdsa@example.com
+                serial:A1:E5:8D:81:69:53:01:9C
+
+            X509v3 Basic Constraints: 
+                CA:TRUE
+    Signature Algorithm: sha1WithRSAEncryption
+        39:c8:11:a1:04:dd:85:f9:ea:71:27:94:2f:cd:12:36:25:0f:
+        64:44:61:1c:fa:0c:a0:fd:1d:70:b8:34:64:2e:03:4a:fe:97:
+        b9:57:0d:b6:9d:24:b9:1f:6e:16:56:9b:a6:bb:af:0a:27:de:
+        d6:f6:1e:4b:7d:26:1b:23:1c:5b:5f:35:b4:02:af:5b:5f:a6:
+        0c:59:d5:8f:5b:01:2c:94:b3:70:73:71:c0:2b:f1:19:cc:43:
+        3f:d8:df:b6:87:32:55:52:55:8a:95:64:c5:e6:16:3e:6a:83:
+        92:4e:4f:97:da:17:fd:e0:93:f4:0c:3b:28:a2:bc:6d:36:d6:
+        a0:cf:9f:58:56:4b:c0:56:c8:eb:4f:54:db:49:47:ba:15:b7:
+        fe:7b:d1:e0:ab:2d:50:e3:6b:31:f5:23:47:fe:ba:55:ce:37:
+        65:3f:f5:40:e4:84:5f:79:bf:3f:a1:16:59:43:45:43:17:8b:
+        cd:ee:2d:0c:be:fc:9a:29:4e:95:84:da:b4:25:ee:19:8c:ee:
+        29:b0:64:d7:e3:d9:b4:45:df:34:9c:01:87:9a:d6:1a:6a:6f:
+        25:12:a2:d8:0b:df:10:1b:d9:20:af:a8:16:ab:2c:10:d6:04:
+        c2:ce:75:68:04:20:d0:4f:b1:45:4c:a7:8b:af:93:1f:11:e3:
+        93:a6:09:b0

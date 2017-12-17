@@ -5,6 +5,6 @@
 	"NO_TOKEN": "No se ha proporcionado ningún token",
 	"INVALID_TOKEN": "Token inválido",
 	"USER_NOT_FOUND": "Usuario no encontrado",
-	"pepe": "pepe",
-	"FILL_FIELDS": "Campos no rellenados"
+	"FILL_FIELDS": "Campos no rellenados",
+	"Not Found": "No encontrado"
 }

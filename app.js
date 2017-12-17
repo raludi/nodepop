@@ -38,8 +38,8 @@ app.use('/ads/mac.png', express.static (__dirname + '/public/images/ads/mac.jpg'
 
 //Cargamos nuestras rutas
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/apiV1/users'));
-app.use('/ads', require('./routes/apiV1/ads'));
+app.use('/apiV1/users', require('./routes/apiV1/users'));
+app.use('/apiV1/ads', require('./routes/apiV1/ads'));
 
 //Si ningun middleware(use) es aceptado nos vamos al siguiente que muestra el error
 // catch 404 and forward to error handler

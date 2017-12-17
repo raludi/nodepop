@@ -13,7 +13,6 @@ router.post('/register', [
     body('password').isLength({ min: 6 }).withMessage('passwords must be at least 6 chars length')   
     ],
     (req, res, next) => {
-    const lang = req.get('Accept-Language');
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         console.log(errors.mapped);
@@ -21,17 +20,15 @@ router.post('/register', [
     }
     const pass = SHA256(req.body.password);
     if(!req.body.name || !req.body.email || !req.body.password) {
-        console.log(res.__('FILL_FIELDS'));
-        return next(new customError('FILL_FIELDS', 401))
+        return next(new customError('FILL_FIELDS', 400));
     }
     const registration = new User({ name: req.body.name, email: req.body.email, password: pass});
     User.registerUser(registration);
     res.json({ success: true, result: res.__('ELEMENT_ADDED')});
 });
 
-router.post('/authenticate', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     try {
-        const lang = req.get('Accept-Language')
         var filter = {};
         filter.email = req.body.email;
         filter.password = SHA256(req.body.password);    
@@ -39,13 +36,13 @@ router.post('/authenticate', async (req, res, next) => {
         if (row.length <= 0) {
             next(new customError('USER_NOT_FOUND', 404));
             return; 
-        }  AUTH_FAIL
+        } 
         const userId = { _id: row._id};
         jwt.sign({ user_id: userId._id}, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES_IN
         }, (err, token) => {
             if (err) {
-                next(new customError('AUTH_FAIL', 404));
+                next(new customError('AUTH_FAIL', 401));
                 return; 
             }
             res.json({ sucess: true, token: token });
