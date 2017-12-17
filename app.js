@@ -51,15 +51,10 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  if(err.status === 422) {
-    return res.json({ success: false, error: err.message, status: err.status });
-  }
+
   res.status(err.status || 500);
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-console.log(res.__(err.message));
-  // Error para una página web
   return res.json({success: false, 
       error: res.__(err.message),  
       status: err.status});

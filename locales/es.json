@@ -6,5 +6,7 @@
 	"INVALID_TOKEN": "Token inválido",
 	"USER_NOT_FOUND": "Usuario no encontrado",
 	"FILL_FIELDS": "Campos no rellenados",
-	"Not Found": "No encontrado"
+	"Not Found": "No encontrado",
+	"INCORRECT_MAIL": "Email mal introducido",
+	"PASS_LENGTH": "Contraseña debe tener longitud 6 caracteres"
 }

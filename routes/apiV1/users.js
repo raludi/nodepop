@@ -9,19 +9,19 @@ const customError = require('../../utils/customError');
 const { body, validationResult } = require('express-validator/check');
 
 router.post('/register', [
-    body('email').isEmail().withMessage('Must be an email'),
-    body('password').isLength({ min: 6 }).withMessage('passwords must be at least 6 chars length')   
+    body('email').isEmail().withMessage('INCORRECT_MAIL'),
+    body('password').isLength({ min: 6 }).withMessage('PASS_LENGTH'),
+    body('name').exists().withMessage("FILL_FIELDS"),
+    body('email').exists().withMessage("FILL_FIELDS"),
+    body('password').exists().withMessage("FILL_FIELDS")
     ],
     (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors.mapped);
-        return next(new customError(errors.mapped(), 422));
+        const errInfo = errors.array({onlyFirstError: true})[0];
+        return next(new customError(errInfo.msg, 422));
     }
     const pass = SHA256(req.body.password);
-    if(!req.body.name || !req.body.email || !req.body.password) {
-        return next(new customError('FILL_FIELDS', 400));
-    }
     const registration = new User({ name: req.body.name, email: req.body.email, password: pass});
     User.registerUser(registration);
     res.json({ success: true, result: res.__('ELEMENT_ADDED')});

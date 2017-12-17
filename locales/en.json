@@ -6,5 +6,7 @@
 	"INVALID_TOKEN": "Token invalid",
 	"USER_NOT_FOUND": "User not found",
 	"FILL_FIELDS": "Fields no completed",
-	"Not Found": "Not Found"
+	"Not Found": "Not Found",
+	"INCORRECT_MAIL": "Email incorrect",
+	"PASS_LENGTH": "Password must be at least 6 chars length"
 }

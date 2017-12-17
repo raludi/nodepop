@@ -1,4 +1,4 @@
-##Práctica Nodejs Keepcoding
+##Práctica Módulo Nodejs 
 
 ###Nodepop
 
@@ -21,4 +21,6 @@
   Se ha llevado a cabo la internacionalización de los mensajes de error con `i18n`, la estructura que se ha seguido para la visualización de los mensajes es un json con la estructura { success, menssage, status }.
   
   
+  La conexión usa el protocolo HTTPS para que sea segura y usamos un cluster para la API.
   
+  Durante el desarrollo de la práctica se ha usado con un conjunto de herramientas sencillas `eslint`.

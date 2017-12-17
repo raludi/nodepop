@@ -31,7 +31,6 @@ router.get('/tags/', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     
     try {
-        console.log("entro");
         var filters = {};
         filters.name = (typeof req.query.name !== undefined ? req.query.name : null);
         filters.sale = (typeof req.query.sale !== undefined ? req.query.sale : null);
