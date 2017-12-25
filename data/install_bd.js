@@ -28,7 +28,7 @@ async function installDB() {
 
     await User.remove({}).exec();
 
-    await User.insertMany(objUsers.user, (err,data) => {
+    await User.insertMany(objUsers.user, (err,data) => { //Al hacerlo con await no hace falta un callback
         if (err) throw error;
         console.log('Users added')
     }); 
