@@ -1,8 +1,9 @@
-# Práctica Módulo Nodejs 
+## Practica Modulo Nodejs
 
-## Nodepop
-  
-  Para esta práctica se nos ha pedido la realización de una api a la que realizaremos una serie de peticiones. Para iniciar la aplicación ejecutaremos `npm run dev`
+
+### Nodepop
+
+  Para esta práctica se nos ha pedido la realización de una api a la que realizaremos una serie de peticiones.
   
   Se ha creado un script `install_db.js`que llevará a cabo la inicialización de la base de datos.
   
