@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./bin/cluster",
     "install_db": "node ./data/install_bd.js",
     "dev": "PORT=443 DEBUG=nodepop:* nodemon ./bin/www",
-    "cluster": "node ./bin/cluster"
+    "start_ssl": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
