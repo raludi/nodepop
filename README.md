@@ -29,7 +29,9 @@
 ## Entrega DevOps
 
 Todas las URL siguen la conexión segura HTTPS  
-Dominio web estática: rafaellujan.com / www.rafaellujan.com  
+IP pública: 18.218.57.249  
+Dominio web estática: rafaellujan.com / www.rafaellujan.com  
 Dominio práctica nodepop: nodepop.rafaellujan.com  
-Archivos estáticos: nodepop.rafaelluujan.com/images/"foto".jpg
+Archivos estáticos: nodepop.rafaelluujan.com/images/"foto".jpg  
+
 
