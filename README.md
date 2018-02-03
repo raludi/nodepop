@@ -29,7 +29,7 @@
 ## Entrega DevOps
 
 Todas las URL siguen la conexión segura HTTPS  
-Dominio web estática: rafaellujan.com / www.rafaellujan.com
+Dominio web estática: rafaellujan.com / www.rafaellujan.com  
 Dominio práctica nodepop: nodepop.rafaellujan.com  
 Archivos estáticos: nodepop.rafaelluujan.com/images/"foto".jpg
 
