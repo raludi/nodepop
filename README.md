@@ -13,7 +13,7 @@
 | -------     | --------- | -------- |
 | GET /apiV1/ads    | Obtenemos lista anuncios |
 | GET /apiV1/ads/filtros | Filtramos la lista de anuncios | Query: limit, sort, start, price, name, photo, tags, sale. |
-| GET /apiV1/photo.png | Sirve fichero estático foto. | |
+| GET /images/"foto".jpg | Sirve fichero estático foto. | |
 | POST /apiV1/users/register | Registramos usuario en base de datos | Body: email, password, name |
 | POST /apiV1/users | Recibimos token | Body: email, password |
 
@@ -25,3 +25,9 @@
   La conexión usa el protocolo HTTPS para que sea segura y usamos un cluster para la API.
   
   Durante el desarrollo de la práctica se ha usado con un conjunto de herramientas sencillas `eslint`.
+
+## Entrega DevOps
+
+Dominio web estática: rafaellujan.com / www.rafaellujan.com
+Dominio práctica nodepop: nodepop.rafaellujan.com
+
